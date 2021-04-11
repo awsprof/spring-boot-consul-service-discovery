@@ -1,4 +1,5 @@
-#Spring Boot Service Mesh with Consul
+
+# Spring Boot Service Mesh with Consul
 This repository contains two simple Spring boot microservices that are linked together using the Hashicorp Consul Service Discovery Service.
 
 ## Installation
