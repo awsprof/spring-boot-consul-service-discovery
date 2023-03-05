@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: "consul:"
+  cloud:
+    consul:
+      discovery:
+        fail-fast: true
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      host: localhost
+      port: 8500
+      config:
+        enabled: true
+        format: yaml
+  application:
+    name: "RestConsumer"
