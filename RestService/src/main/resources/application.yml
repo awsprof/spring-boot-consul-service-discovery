@@ -6,7 +6,8 @@ spring:
       discovery:
         fail-fast: true
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-      host: localhost
+        service-name: ${spring.application.name}
+      host: consul.srivittal.com
       port: 8500
       config:
         enabled: true

@@ -1,3 +1,5 @@
+server:
+  port: 28080
 spring:
   config:
     import: "consul:"
@@ -6,7 +8,7 @@ spring:
       discovery:
         fail-fast: true
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-      host: localhost
+      host: consul.srivittal.com
       port: 8500
       config:
         enabled: true
