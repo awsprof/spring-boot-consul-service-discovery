@@ -95,7 +95,7 @@
                             <name>${registry-name}/%a:%l</name>
                         </image>
                     </images>
-                    <dockerHost>http://registry.srivittal.com:5000</dockerHost>
+                    <pushRegistry>${registry-name}</pushRegistry>
                 </configuration>
 
                 <!-- Connect start/stop to pre- and
