@@ -103,6 +103,16 @@
                      your docker containers during integration tests -->
                 <executions>
                     <execution>
+                        <id>push</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>stop</goal>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                            <goal>remove</goal>
+                        </goals>
+                    </execution>
+                    <execution>
                         <id>start</id>
                         <phase>pre-integration-test</phase>
                         <goals>
