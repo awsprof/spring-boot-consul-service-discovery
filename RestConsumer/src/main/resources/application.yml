@@ -2,7 +2,7 @@ server:
   port: 28080
 spring:
   config:
-    import: "consul:"
+    import: "optional:consul:"
   cloud:
     consul:
       discovery:

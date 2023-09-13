@@ -1,6 +1,6 @@
 spring:
   config:
-    import: "consul:"
+    import: "optional:consul:"
   cloud:
     consul:
       discovery:
