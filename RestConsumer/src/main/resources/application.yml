@@ -13,5 +13,6 @@ spring:
       config:
         enabled: true
         format: yaml
+        acl-token: 2bd18067-2fd6-3a43-669b-91d56be83457
   application:
     name: "RestConsumer"
