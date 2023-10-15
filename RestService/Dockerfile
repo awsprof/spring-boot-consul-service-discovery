@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17.0.6_10-jre-jammy
+FROM registry.srivittal.com:5000/eclipse-temurin:17.0.6_10-jre-jammy
 VOLUME /tmp
 EXPOSE 8080
 ARG JAR_FILE=target/*.jar
