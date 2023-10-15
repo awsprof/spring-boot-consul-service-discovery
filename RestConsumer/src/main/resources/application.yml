@@ -6,13 +6,21 @@ spring:
   cloud:
     consul:
       discovery:
+        enabled: true
+        register: true
+        deregister: true
         fail-fast: true
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        acl-token: "2bd18067-2fd6-3a43-669b-91d56be83457"
+        health-check-url: http://localhost:28080/actuator/health
       host: consul.srivittal.com
-      port: 8500
+      port: 8501
       config:
         enabled: true
         format: yaml
-        acl-token: 2bd18067-2fd6-3a43-669b-91d56be83457
+        acl-token: "2bd18067-2fd6-3a43-669b-91d56be83457"
+      scheme: https
+#      tls:
+#        certificate-path: /Users/rsendhil/git/spring-boot-consul-service-discovery/RestConsumer/consul-ca.crt
   application:
     name: "RestConsumer"

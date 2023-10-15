@@ -4,14 +4,21 @@ spring:
   cloud:
     consul:
       discovery:
+        enabled: true
         fail-fast: true
         instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
         service-name: ${spring.application.name}
+        register: true
+        deregister: true
+        acl-token: 2bd18067-2fd6-3a43-669b-91d56be83457
       host: consul.srivittal.com
-      port: 8500
+      port: 8501
       config:
         enabled: true
         format: yaml
         acl-token: 2bd18067-2fd6-3a43-669b-91d56be83457
+      scheme: https
   application:
     name: "RestService"
+server:
+  port: 28081
