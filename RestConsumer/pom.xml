@@ -93,9 +93,13 @@
                         <!-- A single's image configuration -->
                         <image>
                             <name>${registry-name}/%a:%l</name>
+                            <createImageOptions>
+                                <platform>linux/amd64</platform>
+                            </createImageOptions>
                         </image>
                     </images>
                     <pushRegistry>${registry-name}</pushRegistry>
+                    <
                 </configuration>
 
                 <!-- Connect start/stop to pre- and
