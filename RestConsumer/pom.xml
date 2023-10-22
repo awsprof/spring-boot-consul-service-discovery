@@ -28,6 +28,7 @@
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.3</spring-cloud.version>
         <registry-name>registry.srivittal.com:5000</registry-name>
+        <docker.platforms>linux/amd64</docker.platforms>
     </properties>
 
     <dependencies>
@@ -86,16 +87,18 @@
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.43.0</version>
+                <version>0.43.4</version>
 
                 <configuration>
                     <images>
                         <!-- A single's image configuration -->
                         <image>
                             <name>${registry-name}/%a:%l</name>
-                            <createImageOptions>
-                                <platform>linux/amd64</platform>
-                            </createImageOptions>
+                            <build>
+                                <buildOptions>
+                                    <platforms>${docker.platforms}</platforms>
+                                </buildOptions>
+                            </build>>
                         </image>
                     </images>
                     <pushRegistry>${registry-name}</pushRegistry>
