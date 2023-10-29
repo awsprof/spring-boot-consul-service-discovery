@@ -1,4 +1,5 @@
 FROM registry.srivittal.com:5000/eclipse-temurin:17.0.6_10-jre-jammy
+ADD ./cacerts /opt/java/openjdk/lib/security/cacerts
 VOLUME /tmp
 EXPOSE 28080
 ARG JAR_FILE=target/*.jar
