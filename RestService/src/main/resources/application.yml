@@ -16,7 +16,7 @@ spring:
       config:
         enabled: true
         format: yaml
-        acl-token: 2bd18067-2fd6-3a43-669b-91d56be83457
+        acl-token: "6f1243f0-3bb2-6143-e6ba-403e6debd47b"
       scheme: https
   application:
     name: "RestService"

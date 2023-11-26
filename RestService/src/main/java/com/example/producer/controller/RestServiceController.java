@@ -15,7 +15,7 @@ public class RestServiceController {
 
     @GetMapping("/sayHello/{name}")
     public String sayHello(@PathVariable String name){
-        return "Hello from " + POD_IP + " - " + name;
+        return "Hello from " + (POD_IP == null ? "Not a POD" : POD_IP) + " - " + name;
     }
 
 }
