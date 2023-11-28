@@ -116,8 +116,9 @@
                                 <argument>build</argument>
                                 <argument>-f</argument>
                                 <argument>Dockerfile</argument>
-                                <argument>--build-arg</argument>
-                                <argument>JAR_FILE=target/${project.artifactId}-${project.version}.jar</argument>
+                                <argument>--progress=plain</argument>
+<!--                                <argument>&#45;&#45;build-arg</argument>-->
+<!--                                <argument>JAR_FILE=target/${project.artifactId}-${project.version}.jar</argument>-->
                                 <argument>-t</argument>
                                 <argument>${registry-name}:${registry-port}/${artifactId}:${project.version}</argument>
                                 <argument>.</argument>
