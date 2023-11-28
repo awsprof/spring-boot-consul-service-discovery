@@ -1,6 +1,5 @@
 FROM eclipse-temurin:17.0.6_10-jre-jammy
-ARG CACERTS_PATH
-ADD ${CACERTS_PATH} /opt/java/openjdk/lib/security/cacerts
+ADD ./cacerts /opt/java/openjdk/lib/security/cacerts
 
 VOLUME /tmp
 EXPOSE 8080
