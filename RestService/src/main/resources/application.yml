@@ -1,3 +1,5 @@
+server:
+  port: 8080
 spring:
   config:
     import: "optional:consul:"
@@ -19,6 +21,4 @@ spring:
         acl-token: "6f1243f0-3bb2-6143-e6ba-403e6debd47b"
       scheme: https
   application:
-    name: "RestService"
-server:
-  port: 28081
+    name: "restservice"

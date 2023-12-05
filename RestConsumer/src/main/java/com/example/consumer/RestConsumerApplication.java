@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @EnableConfigurationProperties
 public class RestConsumerApplication {
 
@@ -17,9 +17,9 @@ public class RestConsumerApplication {
         SpringApplication.run(RestConsumerApplication.class, args);
     }
 
-    @LoadBalanced
+//    @LoadBalanced
     @Bean
-    RestTemplate template() {
+    RestTemplate restTemplate() {
         return new RestTemplate();
     }
 
