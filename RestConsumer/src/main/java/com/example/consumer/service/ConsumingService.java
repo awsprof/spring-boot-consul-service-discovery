@@ -1,5 +1,8 @@
 package com.example.consumer.service;
 
+import com.example.consumer.controller.SampleController;
+import io.micrometer.common.util.internal.logging.InternalLogger;
+import io.micrometer.common.util.internal.logging.Slf4JLoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +21,8 @@ import java.util.List;
 @Service
 public class ConsumingService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumingService.class);
+//    private static final Logger LOGGER = LoggerFactory.getLogger(ConsumingService.class);
+    private InternalLogger logger = Slf4JLoggerFactory.getInstance(ConsumingService.class);
 
     @Autowired
     private RestTemplate restTemplate;
@@ -58,11 +62,11 @@ public class ConsumingService {
 //        String endpoint = serviceUrl();
 //        String endpoint = uri + "/service/sayHello/{user}";
         String endpoint = "http://localhost:8080/service/sayHello/{user}";
-        System.out.println("Calling restTemplate");
+        logger.info("Calling restTemplate");
         String response = restTemplate.getForObject(endpoint,String.class,user);
 //        String response = restTemplate.exchange(endpoint, HttpMethod.GET, null, new ParameterizedTypeReference<String>() {
 //        }, user).getBody();
-        LOGGER.info("Response: {}", response);
+        logger.info("Response: {}", response);
         return "Response Received as " + response + " -  " + new Date();
     }
 

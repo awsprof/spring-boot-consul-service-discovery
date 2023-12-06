@@ -1,0 +1,20 @@
+
+<configuration>
+<appender name="LOKI" class="com.github.loki4j.logback.Loki4jAppender">
+    <http>
+        <url>http://loki-gateway.grafana.svc.cluster.local/loki/api/v1/push</url>
+    </http>
+    <format>
+        <label>
+            <pattern>container=restservice,host=${HOSTNAME},level=%level</pattern>
+        </label>
+        <message>
+            <pattern>l=%level h=${HOSTNAME} c=%logger{20} t=%thread | %msg %ex</pattern>
+        </message>
+        <sortByTime>true</sortByTime>
+    </format>
+</appender>
+<root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+</root>
+</configuration>
