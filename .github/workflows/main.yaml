@@ -23,4 +23,4 @@ jobs:
           java-version: 17
           maven-version: 3.9.5
       - name: Run the Maven verify phase
-        run: mvn --verify
+        run: mvn -V
